@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SunExposure</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="w3.css">
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="test.js"></script>
+</head>
+<div>
+<div class="w3-top">
+    <!--header-->
+    <div class="w3-row w3-padding w3-black">
+        <div class="w3-col s3">
+            <a href="mapp.html" class="w3-button w3-block w3-black">HOME</a>
+        </div>
+        <div class="w3-col s3">
+            <a href="#about" class="w3-button w3-block w3-black">MY PLAN</a>
+        </div>
+        <div class="w3-col s3">
+            <a href="group.html" class="w3-button w3-block w3-black">GROUP</a>
+        </div>
+        <!--<div class="w3-col s3">-->
+            <!--<a href="#where" class="w3-button w3-block w3-black">MOMENT</a>-->
+        <!--</div>-->
+        <!--<div class="w3-col s3">-->
+            <!--<a href="#where" class="w3-button w3-block w3-black">GROUP</a>-->
+        <!--</div>-->
+        <div class="w3-col s3">
+            <a href="#where" class="w3-button w3-block w3-black">PROFILE</a>
+        </div>
+    </div>
+    <div class="w3-content w3-margin-top" style="max-width:1400px;">
+
+    <!-- Left Column -->
+    <div class="w3-third">
+        <div class="w3-white w3-text-grey w3-card-4">
+            <div class="w3-display-container">
+                <img src="images/profile.jpg" style="width:60%">
+                <div class="w3-display-right w3-container w3-text-black">
+                    <h2>User Name</h2>
+                </div>
+            </div>
+            <div class="w3-container">
+                <p><i class="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-teal"></i>Student</p>
+                <p><i class="fa fa-home fa-fw w3-margin-right w3-large w3-text-teal"></i>Evanston, United States</p>
+                <p><i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-teal"></i>example@mail.com</p>
+                <p><i class="fa fa-phone fa-fw w3-margin-right w3-large w3-text-teal"></i>123456789</p>
+
+                <div class="w3-panel w3-large">
+                    <i class="fa fa-facebook-official w3-hover-opacity"></i>
+                    <i class="fa fa-instagram w3-hover-opacity"></i>
+                    <i class="fa fa-snapchat w3-hover-opacity"></i>
+                    <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+                    <i class="fa fa-twitter w3-hover-opacity"></i>
+                    <i class="fa fa-linkedin w3-hover-opacity"></i>
+                </div>
+                <hr>
+                <p class="w3-large"><b><i class="fa fa-asterisk fa-fw w3-margin-right w3-text-teal"></i>Achievements</b></p>
+                <!--<div class="w3-container">-->
+                    <!--<h6 class="w3-text-teal"><i class="fa fa-certificate fa-fw w3-margin-right w3-large w3-text-teal"></i>Modal1</h6>-->
+                    <!--<p>Walk 10 miles, Reduced 1kg carbon emissions!</p>-->
+                    <!--<hr>-->
+                <!--</div>-->
+                <p>No achievements yet, Cheer Up!</p>
+
+
+                <br>
+
+            </div>
+        </div><br>
+
+        <!-- End Left Column -->
+
+    </div>
+
+    <!-- Right Column -->
+    <div class="w3-twothird">
+        <div class="w3-container w3-card w3-white">
+            <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-certificate fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Physical conditions</h2>
+            <!--<div class="w3-container">-->
+                <!--&lt;!&ndash;<h5 class="w3-opacity"><b>W3Schools.com</b></h5>&ndash;&gt;-->
+                <!--<h6 class="w3-text-teal"><i class="fa fa-certificate fa-fw w3-margin-right w3-large w3-text-teal"></i>Modal1</h6>-->
+                <!--<p>Walk 10 miles, Reduced 1kg carbon emissions!</p>-->
+                <!--<hr>-->
+                <!--&lt;!&ndash;<button id="textchanger">Modify</button>&ndash;&gt;-->
+            <!--</div>-->
+            <div id="modify">
+                <form target="_blank">
+                    <label class="w3-large">Age</label>
+                    <p><input class="w3-input w3-padding-small w3-border" type="text" placeholder="18" required name="Age"></p>
+                    <label for="gender">Gender</label>
+                    <select id="gender" name="gender" class="w3-input w3-padding-16 w3-border">
+                        <option value="usa">Male</option>
+                        <option value="usa">Female</option>
+                        <option value="usa">Deny to self identify</option>
+                    </select>
+                    <br>
+                    <label class="w3-large">Weight</label>
+                    <p><input class="w3-input w3-padding-small w3-border" type="number" placeholder="kg" required name="Weight"></p>
+                    <label class="w3-large">Height</label>
+                    <p><input class="w3-input w3-padding-small w3-border" type="number" placeholder="cm" required name="Height"></p>
+                    <label class="w3-large">Waistline</label>
+                    <p><input class="w3-input w3-padding-small w3-border" type="number" placeholder="cm" required name="Waistline"></p>
+                    <label class="w3-large">Bust</label>
+                    <p><input class="w3-input w3-padding-small w3-border" type="number" placeholder="cm" required name="Bust"></p>
+                    <p><button class="w3-button w3-black" type="submit">SAVE</button></p>
+                </form>
+
+
+            </div>
+
+        </div>
+
+        <!-- End Right Column -->
+    </div>
+    </div>
+    </div>
+    </div>
+</div>
+
+
+</body>
+</html>
