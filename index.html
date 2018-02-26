@@ -106,7 +106,7 @@ function myMap()
 </script>
 
   <script>
-    $.getJSON('http://api.openweathermap.org/data/2.5/uvi?appid=21e31e097b4e1d59b2850dca5beb0f95&lat=42.045597&lon=-87.688568', function(uvdata) {
+    $.getJSON('https://api.openweathermap.org/data/2.5/uvi?appid=21e31e097b4e1d59b2850dca5beb0f95&lat=42.045597&lon=-87.688568', function(uvdata) {
       //data is the JSON string
       console.log(uvdata.value);
       if (uvdata.value < 3){
@@ -154,20 +154,20 @@ function myMap()
   </script>
 
 <script>
-    $.getJSON('http://api.openweathermap.org/data/2.5/weather?appid=21e31e097b4e1d59b2850dca5beb0f95&q=Evanston&units=imperial', function(weather) {
+    $.getJSON('https://api.openweathermap.org/data/2.5/weather?appid=21e31e097b4e1d59b2850dca5beb0f95&q=Evanston&units=imperial', function(weather) {
       var icon = weather.weather[0].icon;
       console.log(weather);
       var description = weather.weather[0].description;
       console.log(description);
       var temp = weather.main.temp;
       console.log(weather.main.temp);
-      $("#weather-icon").attr("src","http://openweathermap.org/img/w/"+icon+".png");
+      $("#weather-icon").attr("src","https://openweathermap.org/img/w/"+icon+".png");
       $("#description").html("It is "+description+" now. The tempreture now is "+temp+" F.");
     });
 </script>
 
 <script>
-  $.getJSON('http://api.openweathermap.org/data/2.5/forecast?appid=07bde491725b1652e1e12d1fd371d8b8&q=Evanston&units=imperial',function(data){
+  $.getJSON('https://api.openweathermap.org/data/2.5/forecast?appid=07bde491725b1652e1e12d1fd371d8b8&q=Evanston&units=imperial',function(data){
     console.log(data.list[0].main.temp);
     var dom = document.getElementById("tempcontainer");
     var myChart = echarts.init(dom);
