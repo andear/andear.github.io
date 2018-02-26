@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="w3.css">
     <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="SunExposure.js"></script>
+    <script src="group.js"></script>
 </head>
 <div>
 <div class="w3-top">
@@ -16,16 +16,9 @@
         <div class="w3-col s3">
             <a href="index.html" class="w3-button w3-block w3-black">HOME</a>
         </div>
-        <!--
-        <div class="w3-col s3">
-            <a href="#about" class="w3-button w3-block w3-black">FEED</a>
-        </div>-->
         <div class="w3-col s3">
             <a href="" class="w3-button w3-block w3-black">MY PLAN</a>
         </div>
-        <!--<div class="w3-col s3">-->
-            <!--<a href="#where" class="w3-button w3-block w3-black">MOMENT</a>-->
-        <!--</div>-->
         <div class="w3-col s3">
             <a href="group.html" class="w3-button w3-block w3-black">GROUP</a>
         </div>
@@ -43,42 +36,60 @@
                 <div class="w3-col s6 tablink">My Group</div>
 
             </div>
-
-            <div id="Find" class="w3-col l6 w3-container menu w3-padding-48 w3-card w3-plan">
+            <div class="w3-row w3-container menu w3-padding-48 w3-card w3-plan">
+            <div id="Find" class="w3-col l6 ">
               <label class="w3-large">Find a Group</label>
-                <p><input class="w3-input w3-padding-small w3-border" type="text" placeholder="group name" required name="Age"></p>
-              <p><button class="w3-button w3-black" type="submit">Search</button></p><br>
-              <h5>Search Result</h5><br>
+                <p><input id="searchInput" class="w3-input w3-padding-small w3-border" type="text" placeholder="group name" required name="group name"></p>
+              <p><button class="w3-button w3-black" onclick="onSearch()">Search</button>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <button class="w3-button w3-black" onclick="onNewGroup()">new group</button></p><br>
+              <div class="noshow w3-text-grey" id="notValidSreach"></div>
+              <div class="noshow" id="searchResult">
+              <h5 class="">Search Result</h5>
 
-              <h6>Group1</h6>
-              <p class="w3-text-grey">Group1 outdoor running group</p><br>
-
-              <h6>Group2</h6>
-              <p class="w3-text-grey">Group2 daily swimming group</p><br>
+              <div class=""id="group1"><h6>&nbsp;</h6></div>
+              <p class="w3-text-grey " id="group1Goal">&nbsp;
+              <p><button id = "g1b"class=" w3-button w3-black " onclick="onJoinGroup()">join</button></p>
+                </p>
+              &nbsp;
+          </div>
             </div>
 
-            <div id="Mygroup" class="w3-col l6 w3-container menu w3-padding-48 w3-card">
-              <label class="w3-large">My Group</label><br>
+            <div id="Mygroup" class="w3-col l6">
+              <label class="w3-large">My Group</label>
+              <label id="mygn" class="w3-large">&nbsp;</label>
+              <br>
 
               <h5>Group Goal</h5>
-              <p class="w3-text-grey">Two Hours' exercise each day</p><br>
+              <p id="groupGoal" class="w3-text-grey">You're not in a group</p><br>
 
               <h5>Group Member</h5>
-              <p class="w3-text-grey">Jack, Rose, John, Rick, Jenny, Rachel</p><br>
+              <p id = "groupMember" class="w3-text-grey">None</p><br>
 
               <h5>Group Owner</h5>
-              <p class="w3-text-grey">Andy</p><br><br>
-              <p><button class=" w3-button w3-black" type="submit">Leave the Group</button></p>
+              <p id="groupOwner" class="w3-text-grey">None</p><br><br>
+              <p><button class=" w3-button w3-black" onclick="onLeaveGroup()">Leave the Group</button></p>
             </div>
+          </div>
           </div>
     </div>
 
 
     </div>
 
-    </div>
-</div>
 
-<script src="SunExposure.js"></script>
+
+    <div id="popNewGroup">
+    <div class="form"  >
+    <h2>New Group</h2>
+    <hr>
+    <input id="gn" name="groupName" placeholder="Group Name">&nbsp;
+    <input id="gg" name="groupGoal" placeholder="Group Goal">&nbsp;
+    <p><button class=" w3-button w3-black" onclick="onSubmit()">new a group</button></p>
+    </div>
+    </div>
+
+
+<script src="group.js"></script>
 </body>
 </html>
