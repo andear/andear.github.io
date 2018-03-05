@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>SunExposure</title>
@@ -8,28 +9,31 @@
     <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="group.js"></script>
+    <style>
+        ::-webkit-scrollbar {display:none}
+    </style>
 </head>
 <div>
-<div class="w3-top">
-    <!--header-->
-    <div class="w3-row w3-padding w3-black">
-        <div class="w3-col s3">
-            <a href="index.html" class="w3-button w3-block w3-black">HOME</a>
-        </div>
-        <div class="w3-col s3">
-            <a href="" class="w3-button w3-block w3-black">MY PLAN</a>
-        </div>
-        <div class="w3-col s3">
-            <a href="group.html" class="w3-button w3-block w3-black">GROUP</a>
-        </div>
-        <div class="w3-col s3">
-            <a href="profile.html" class="w3-button w3-block w3-black">PROFILE</a>
+    <div class="w3-top">
+        <!--header-->
+        <div class="w3-row w3-padding w3-black">
+            <div class="w3-col s3">
+                <a href="welcome.html" class="w3-button w3-block w3-black">HOME</a>
+            </div>
+            <div class="w3-col s3">
+                <a href="discuss.html" class="w3-button w3-block w3-black">COMMUNITY</a>
+            </div>
+            <div class="w3-col s3">
+                <a href="group.html" class="w3-button w3-block w3-black">GROUP</a>
+            </div>
+            <div class="w3-col s3">
+                <a href="profile.html" class="w3-button w3-block w3-black">PROFILE</a>
+            </div>
         </div>
     </div>
-</div>
 
     <div class="w3-container" id="group">
-          <div class="w3-content" style="max-width:1200px">
+        <div class="w3-content" style="max-width:1200px">
             <h5 class="w3-center w3-padding-48"><span class="w3-tag w3-wide">Group</span></h5>
             <div class="w3-row w3-center w3-card w3-padding">
                 <div class="w3-col s6 tablink">Find a group</div>
@@ -37,59 +41,60 @@
 
             </div>
             <div class="w3-row w3-container menu w3-padding-48 w3-card w3-plan">
-            <div id="Find" class="w3-col l6 ">
-              <label class="w3-large">Find a Group</label>
-                <p><input id="searchInput" class="w3-input w3-padding-small w3-border" type="text" placeholder="group name" required name="group name"></p>
-              <p><button class="w3-button w3-black" onclick="onSearch()">Search</button>
-                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              <button class="w3-button w3-black" onclick="onNewGroup()">new group</button></p><br>
-              <div class="noshow w3-text-grey" id="notValidSreach"></div>
-              <div class="noshow" id="searchResult">
-              <h5 class="">Search Result</h5>
+                <div id="Find" class="w3-col l6 ">
+                    <label class="w3-large">Find a Group</label>
+                    <p><input id="searchInput" class="w3-input w3-padding-small w3-border" style="width: 80%" type="text" placeholder="group name" required name="group name"></p>
+                    <p><button class="w3-button w3-black" onclick="onSearch()">Search</button> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <button class="w3-button w3-black" onclick="onNewGroup()">new group</button></p><br>
+                    <div class="noshow w3-text-grey" id="notValidSreach"></div>
+                    <div class="noshow" id="searchResult">
+                        <h5 class="">Search Result</h5>
 
-              <div class=""id="group1"><h6>&nbsp;</h6></div>
-              <p class="w3-text-grey " id="group1Goal">&nbsp;
-              <p><button id = "g1b"class=" w3-button w3-black " onclick="onJoinGroup()">join</button></p>
-                </p>
-              &nbsp;
-          </div>
+                        <div class="" id="group1">
+                            <h6>&nbsp;</h6></div>
+                        <p class="w3-text-grey " id="group1Goal">&nbsp;
+                            <p><button id="g1b" class=" w3-button w3-black " onclick="onJoinGroup()">join</button></p>
+                        </p>
+                        &nbsp;
+                    </div>
+                </div>
+
+                <div id="Mygroup" class="w3-col l6">
+                    <label class="w3-large">My Group</label>
+                    <label id="mygn" class="w3-large">&nbsp;</label>
+                    <br>
+
+                    <h5>Group Goal</h5>
+                    <p id="groupGoal" class="w3-text-grey">You're not in a group</p><br>
+
+                    <h5>Group Member</h5>
+                    <p id="groupMember" class="w3-text-grey">None</p><br>
+
+                    <h5>Group Owner</h5>
+                    <p id="groupOwner" class="w3-text-grey">None</p><br><br>
+                    <p><button class=" w3-button w3-black" onclick="onLeaveGroup()">Leave the Group</button></p>
+                </div>
             </div>
-
-            <div id="Mygroup" class="w3-col l6">
-              <label class="w3-large">My Group</label>
-              <label id="mygn" class="w3-large">&nbsp;</label>
-              <br>
-
-              <h5>Group Goal</h5>
-              <p id="groupGoal" class="w3-text-grey">You're not in a group</p><br>
-
-              <h5>Group Member</h5>
-              <p id = "groupMember" class="w3-text-grey">None</p><br>
-
-              <h5>Group Owner</h5>
-              <p id="groupOwner" class="w3-text-grey">None</p><br><br>
-              <p><button class=" w3-button w3-black" onclick="onLeaveGroup()">Leave the Group</button></p>
-            </div>
-          </div>
-          </div>
+        </div>
     </div>
 
 
-    </div>
+</div>
 
 
 
-    <div id="popNewGroup">
-    <div class="form"  >
-    <h2>New Group</h2>
-    <hr>
-    <input id="gn" name="groupName" placeholder="Group Name">&nbsp;
-    <input id="gg" name="groupGoal" placeholder="Group Goal">&nbsp;
-    <p><button class=" w3-button w3-black" onclick="onSubmit()">new a group</button></p>
+<div id="popNewGroup">
+    <div class="form">
+        <h2>New Group</h2>
+        <hr>
+        <input id="gn" name="groupName" placeholder="Group Name">&nbsp;
+        <input id="gg" name="groupGoal" placeholder="Group Goal">&nbsp;
+        <p><button class=" w3-button w3-black" onclick="onSubmit()">new a group</button></p>
     </div>
-    </div>
+</div>
 
 
 <script src="group.js"></script>
 </body>
+
 </html>

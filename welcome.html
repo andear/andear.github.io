@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SunExposure</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="w3.css">
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="test.js"></script>
+    <script src="jquery.js"></script>
+    <style>
+      ::-webkit-scrollbar {display: none}
+    </style>
+    <script type="text/javascript" src="echarts.js"></script>
+</head>
+
+<!-- Links (sit on top) -->
+<div class="w3-top">
+  <div class="w3-row w3-padding w3-black">
+    <div class="w3-col s3">
+      <a href="welcome.html" class="w3-button w3-block w3-black">HOME</a>
+    </div>
+    <div class="w3-col s3">
+        <a href="discuss.html" class="w3-button w3-block w3-black">COMMUNITY</a>
+    </div>
+    <div class="w3-col s3">
+      <a href="group.html" class="w3-button w3-block w3-black">GROUP</a>
+    </div>
+    <div class="w3-col s3">
+      <a href="profile.html" class="w3-button w3-block w3-black">PROFILE</a>
+    </div>
+  </div>
+</div>
+<div class="w3-container">
+<div class = "w3-content max-width=1200px;">
+    <h5 class="w3-center w3-padding-48"><span class="w3-tag w3-wide">Welcome to SunExposure Explorer</span></h5>
+    <!--weather container -->
+    <div class="w3-container w3-col w3-card l6 " id="weather" style="top: 30px; position:relative;">
+      <div class="w3-content" style="width:470px; height:650px;top:-65px;display:inline-block;position:relative;">
+        <span class="w3-tag">Weather</span>
+        </br>
+        <img id = "weather-image" alt="current uv" style="width:130px;height:130px;"/>
+        <div style="width:300px; height:100px; top: 30px;display:inline-block;position:relative;">
+          <font><b id = "uv-level"></b></font>
+          </br>
+          <font id = "sunscreen">&nbsp &nbsp Please use SPF 30+ sunscreen.</font>
+        </div>
+        <p id = "uv-descp"> <strong></strong></p>
+        <img id = "weather-icon" alt="current weather"/>
+        <font id="description"></font>
+        <p><strong>Weather Forecast</strong></p>
+        <div id ="tempcontainer" style="width: 470px;height:230px;" >
+        </div>
+      </div>
+    </div>
+    <!-- Map Container -->
+    <div class="w3-container w3-grayscale w3-card w3-col l6" id="where" style="height = 800px; top: 30px; position:relative;">
+      <div class="w3-content " style="max-width:600px;	margin-right: 29.5px; top:-65px; position:relative">
+        <span class="w3-tag" style="margin-left:3.5px">Feed</span>
+        <div id="googleMap" style="width:100%;height:500px;margin-left: 15.5px; margin-top:60px;"></div>
+        <p><button class="w3-button w3-black" id="share" style="margin-left:280px;">SHARE FEED</button></p>
+      </div>
+    </div>
+</div>
+<!-- End page content -->
+</div>
+
+<!-- Add Google Maps -->
+<script>
+function myMap()
+{
+  myCenter=new google.maps.LatLng(42.056491, -87.675074);
+  var mapOptions= {
+    center:myCenter,
+    zoom:15, scrollwheel: false, draggable: true,
+    mapTypeId:google.maps.MapTypeId.ROADMAP,
+    mapTypeControl:false,
+    panControl:false,
+    streetViewControl:false,
+  };
+  var map=new google.maps.Map(document.getElementById("googleMap"),mapOptions);
+
+  var coordinates = [
+          {lat: 42.056224, lng: -87.675891},
+          {lat: 42.056256, lng: -87.677178},
+          {lat: 42.058367, lng: -87.677135},
+          {lat: 42.058423, lng: -87.681620}
+        ];
+
+  var path = new google.maps.Polyline({
+    path:coordinates,
+    geodesic: true,
+    strokeColor:'#D60A27',
+    strokeOpacity:1.0,
+    strokeWeight:2
+  });
+  path.setMap(map);
+}
+</script>
+
+<script>
+  $("#share").click(function(){
+      window.location = "discuss.html";
+    });
+</script>
+
+  <script>
+    $.getJSON('https://api.openweathermap.org/data/2.5/uvi?appid=21e31e097b4e1d59b2850dca5beb0f95&lat=42.045597&lon=-87.688568', function(uvdata) {
+      //data is the JSON string
+      console.log(uvdata.value);
+      if (uvdata.value < 3){
+        $("#weather-image").attr("src","images/green.png");
+        $("#weather-image").attr("title","low danger from the sun's UV rays");
+        $("#uv-level").html("&nbsp &nbsp UV-level: GREEN, low danger");
+        $("#uv-level").attr("style","color:green")
+        $("#sunscreen").attr("style","color:green")
+        $("#uv-descp").html("A UV Index reading of 0 to 2 means low danger from the sun's UV rays for the average person. Wear sunglasses on bright days. If you burn easily, cover up and use broad spectrum SPF 30+ sunscreen. Bright surfaces, such as sand, water and snow, will increase UV exposure.");
+      }
+      else if (uvdata.value < 6){
+        $("#weather-image").attr("src","images/yellow.png");
+        $("#weather-image").attr("title","moderate risk of harm from unprotected sun exposure.");
+        $("#uv-level").html("&nbsp &nbsp UV-level: YELLOW, moderate");
+        $("#uv-level").attr("style","color:#F6E332")
+        $("#sunscreen").attr("style","color:#F6E332")
+        $("#uv-descp").html("Stay in shade near midday when the sun is strongest. If outdoors, wear sun protective clothing, a wide-brimmed hat, and UV-blocking sunglasses. Generously apply broad spectrum SPF 30+ sunscreen every 2 hours, even on cloudy days, and after swimming or sweating.");
+      }
+      else if (uvdata.value < 8){
+        $("#weather-image").attr("src","images/orange.png");
+        $("#weather-image").attr("title","high risk of harm from unprotected sun exposure.");
+        $("#uv-level").html("&nbsp &nbsp UV-level: ORANGE, high");
+        $("#uv-level").attr("style","color:orange")
+        $("#sunscreen").attr("style","color:orange")
+        $("#uv-descp").html("Reduce time in the sun between 10 a.m. and 4 p.m. If outdoors, seek shade and wear sun protective clothing, a wide-brimmed hat, and UV-blocking sunglasses. Generously apply broad spectrum SPF 30+ sunscreen every 2 hours, even on cloudy days, and after swimming or sweating.");
+      }
+      else if (uvdata.value < 11){
+        $("#weather-image").attr("src","images/red.png");
+        $("#weather-image").attr("title","very high risk of harm from unprotected sun exposure.");
+        $("#uv-level").html("&nbsp &nbsp UV-level: RED, very high");
+        $("#uv-level").attr("style","color:red")
+        $("#sunscreen").attr("style","color:red")
+        $("#uv-descp").html("Minimize sun exposure between 10 a.m. and 4 p.m. If outdoors, seek shade and wear sun protective clothing, a wide-brimmed hat, and UV-blocking sunglasses. Generously apply broad spectrum SPF 30+ sunscreen every 2 hours, even on cloudy days, and after swimming or sweating.");
+      }
+      else if (uvdata.value >= 11){
+        $("#weather-image").attr("src","images/violet.png");
+        $("#weather-image").attr("title","extreme risk of harm from unprotected sun exposure.");
+        $("#uv-level").html("&nbsp &nbsp UV-level: RED, extreme");
+        $("#uv-level").attr("style","color:violet")
+        $("#sunscreen").attr("style","color:violet")
+        $("#uv-descp").html("Try to avoid sun exposure between 10 a.m. and 4 p.m. If outdoors, seek shade and wear sun protective clothing, a wide-brimmed hat, and UV-blocking sunglasses. Generously apply broad spectrum SPF 30+ sunscreen every 2 hours, even on cloudy days, and after swimming or sweating. ");
+      }
+    });
+
+  </script>
+
+<script>
+    $.getJSON('https://api.openweathermap.org/data/2.5/weather?appid=21e31e097b4e1d59b2850dca5beb0f95&q=Evanston&units=imperial', function(weather) {
+      var icon = weather.weather[0].icon;
+      console.log(weather);
+      var description = weather.weather[0].description;
+      console.log(description);
+      var temp = weather.main.temp;
+      console.log(weather.main.temp);
+      $("#weather-icon").attr("src","https://openweathermap.org/img/w/"+icon+".png");
+      $("#description").html("It is "+description+" now. The tempreture now is "+temp+" F.");
+    });
+</script>
+
+<script>
+  $.getJSON('https://api.openweathermap.org/data/2.5/forecast?appid=07bde491725b1652e1e12d1fd371d8b8&q=Evanston&units=imperial',function(data){
+    console.log(data.list[0].main.temp);
+    var dom = document.getElementById("tempcontainer");
+    var myChart = echarts.init(dom);
+    var app = {};
+    var date=[data.list[0].dt_txt.substring(11,14),data.list[1].dt_txt.substring(11,14),data.list[2].dt_txt.substring(11,14),data.list[3].dt_txt.substring(11,14),data.list[4].dt_txt.substring(11,14),data.list[5].dt_txt.substring(11,14)];
+    var temp = [data.list[0].main.temp,data.list[1].main.temp,data.list[2].main.temp,data.list[3].main.temp,data.list[4].main.temp,data.list[5].main.temp]
+    option = null;
+    option = {
+        xAxis: {
+            type: 'category',
+            boundaryGap: false,
+            data: date
+        },
+        yAxis: {
+            type: 'value'
+        },
+        series: [{
+            data: temp,
+            type: 'line',
+            areaStyle: {}
+        }]
+    };
+    ;
+    if (option && typeof option === "object") {
+        myChart.setOption(option, true);
+    }
+  });
+
+</script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC4UeE5ycsAnb0mCyldw05rPgqVdaWfxfs&callback=myMap"></script>
+<!--
+To use this code on your website, get a free API key from Google.
+Read more at: https://www.w3schools.com/graphics/google_maps_basic.asp
+-->
+
+</body>
+</html>

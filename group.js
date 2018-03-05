@@ -52,6 +52,7 @@ function onSearch() {
     document.getElementById("g1b").style.display = "none";
     console.log("searching");
     document.getElementById("group1").innerHTML = "group named " + searchInput + " not exists";
+    document.getElementById("group1Goal").innerHTML = "";
     // document.getElementById("group1Goal").innerHTML = groupGoals[0];
     // document.getElementById("group2").innerHTML = group[1];
     // document.getElementById("group2Goal").innerHTML = groupGoals[1]
@@ -59,9 +60,9 @@ function onSearch() {
 
 function onLeaveGroup() {
     console.log("leave the group");
-    document.getElementById("groupGoal").innerHTML = "None";
+    document.getElementById("groupGoal").innerHTML = "You're not in a group";
     document.getElementById("groupOwner").innerHTML = "None";
-    document.getElementById("mygn").innerHTML = "You're not in a group";
+    document.getElementById("mygn").innerHTML = "";
     document.getElementById("searchResult").style.display = "none";
     document.getElementById("notValidSreach").style.display = "none";
 }

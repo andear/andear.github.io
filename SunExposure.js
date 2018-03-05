@@ -63,5 +63,22 @@ function confirmInfo() {
 }
 
 function currentPlan() {
-    alert("Under Construction, will redirect to 'My Plan' page afterwards")
+    window.location = "group.html";
+}
+
+
+function login() {
+    var uname = document.getElementById("uname").value;
+    var psw = document.getElementById("psw").value;
+    if (uname != "JamesDean" || psw != "330HCI"){
+        alert("User Name and Password do not match!");
+        return;
+    }
+    window.location = "welcome.html";
+}
+
+function remindPassword() {
+    alert("We supposed you have signed up and following is the information you need:\n" +
+        "\tUser Name:    JamesDean\t\n" +
+        "\tPassword :    330HCI\t")
 }
