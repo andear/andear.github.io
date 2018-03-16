@@ -5,6 +5,7 @@ function onPost() {
     document.getElementById("postedContent").innerHTML = commentInput;
     document.getElementById("addedMoments").style.display = "inline-block";
     document.getElementById("addedPrePic1").style.display = "none";
+    document.getElementById("postedText").innerHTML = "";
 }
 
 function readURL(input) {
@@ -29,6 +30,40 @@ function readURL(input) {
         reader.readAsDataURL(input.files[1]);
 
     }
+}
+
+
+function onShareFeed() {
+    console.log("sharing feed");
+    console.log("sharing feed");
+    window.location.replace("discuss.html?action=shareFeed");
+    // document.location.href = "discuss.html";
+    console.log("sharing feed");
+    console.log("sharing feed");
+    console.log("sharing feed");
+    console.log("sharing feed");
+    console.log("sharing feed");
+    // onShareFeedHelper();
+    // flag = 1;
+    console.log("flag: " + flag);
+    // var commentInput = document.getElementById("postedText").innerHTML;
+}
+
+function onShareFeedHelper() {
+    // console.log("flag: " + flag);
+    var parameters = location.search.substring(1).split("=");
+
+    var temp = parameters[1];
+    console.log("flag: " + temp);
+    // document.getElementById("log").innerHTML = l;
+    // document.getElementById("pass").innerHTML = p;
+    if (temp == "shareFeed") {
+        document.getElementById("addedPrePic1").src = "images/feed.jpg";
+        document.getElementById("addedPic1").src = "images/feed.jpg";
+        document.getElementById("addedPrePic1").style.display = "inline-block";
+
+    }
+    console.log("sharing feed helper!!!!!!!!!!!!!!!");
 }
 
 

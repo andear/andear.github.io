@@ -30,9 +30,9 @@ function myMap()
 }
 
 //relocate to share feed
-  $("#share").click(function(){
-      window.location = "discuss.html";
-    });
+//  $("#share").click(function(){
+//      window.location = "discuss.html";
+//    });
 //get UV data
     $.getJSON('https://api.openweathermap.org/data/2.5/uvi?appid=21e31e097b4e1d59b2850dca5beb0f95&lat=42.045597&lon=-87.688568', function(uvdata) {
       //data is the JSON string
