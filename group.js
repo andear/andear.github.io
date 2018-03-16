@@ -19,10 +19,13 @@ function onSubmit() {
     group.push(gn);
     groupGoals.push(gg);
     document.getElementById("groupGoal").innerHTML = gg;
-    document.getElementById("groupOwner").innerHTML = "YOU";
+    document.getElementById("groupOwner").innerHTML = "James Dean";
+    document.getElementById("groupMember").innerHTML = "James Dean";
     document.getElementById("mygn").innerHTML = ": " + gn;
     document.getElementById('popNewGroup').style.display = "none";
     document.getElementById("notValidSreach").style.display = "none";
+    document.getElementById("currentPlan").style.display = "none";
+
 }
 
 function onSearch() {
@@ -37,7 +40,7 @@ function onSearch() {
         return;
     }
     for (i = 0; i < group.length; i++) {
-        if (searchInput == group[i]) {
+        if (group[i].indexOf(searchInput) >= 0) {
             document.getElementById("g1b").style.display = "inline-block";
             document.getElementById("searchResult").style.display = "inline-block";
             console.log("searching");
@@ -63,13 +66,17 @@ function onLeaveGroup() {
     document.getElementById("groupGoal").innerHTML = "You're not in a group";
     document.getElementById("groupOwner").innerHTML = "None";
     document.getElementById("mygn").innerHTML = "";
+    document.getElementById("groupMember").innerHTML = "None";
     document.getElementById("searchResult").style.display = "none";
     document.getElementById("notValidSreach").style.display = "none";
+    document.getElementById("currentPlan").style.display = "none";
 }
 
 function onJoinGroup() {
     document.getElementById("groupGoal").innerHTML = groupGoals[searchGroupNum];
-    document.getElementById("groupOwner").innerHTML = "YOU";
+    document.getElementById("groupOwner").innerHTML = "Rui Chen";
+    document.getElementById("groupMember").innerHTML = "Jmaes Dean, Rei Chen";
     document.getElementById("mygn").innerHTML = ": " + group[searchGroupNum];
     alert("join the " + group[searchGroupNum]);
+    document.getElementById("currentPlan").style.display = "none";
 }

@@ -27,7 +27,7 @@
             <a href="group.html" class="w3-button w3-block w3-black">GROUP</a>
         </div>
         <div class="w3-col s3">
-            <a href="profile.html" class="w3-button w3-block w3-black">PROFILE</a>
+            <a href="profile.html" class="w3-button w3-block" style="background-color: #cccccc; color: black">PROFILE</a>
         </div>
     </div>
 </div>
@@ -58,14 +58,6 @@
                 <p id="email"><i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-teal"></i>JamesDean2019@gmail.com</p>
                 <p id="phone"><i class="fa fa-phone fa-fw w3-margin-right w3-large w3-text-teal"></i>425-273-9801</p>
                 <p><button class="w3-button w3-black info-change" onclick="changeInfo()">Change Info</button></p>
-                <!--<div class="w3-panel w3-large">-->
-                    <!--<i class="fa fa-facebook-official w3-hover-opacity"></i>-->
-                    <!--<i class="fa fa-instagram w3-hover-opacity"></i>-->
-                    <!--<i class="fa fa-snapchat w3-hover-opacity"></i>-->
-                    <!--<i class="fa fa-pinterest-p w3-hover-opacity"></i>-->
-                    <!--<i class="fa fa-twitter w3-hover-opacity"></i>-->
-                    <!--<i class="fa fa-linkedin w3-hover-opacity"></i>-->
-                <!--</div>-->
                 <hr>
                 <p class="w3-large"><b><i class="fa fa-asterisk fa-fw w3-margin-right w3-text-teal"></i>Achievements</b></p>
                 <p>No achievements yet, Cheer Up!</p>
@@ -82,13 +74,19 @@
                 <div class="w3-container w3-white">
                     <i onclick="document.getElementById('subscribe').style.display='none'" class="fa fa-remove w3-transparent w3-button w3-xlarge w3-right"></i>
                     <h2 class="w3-wide">Update Personal Information</h2>
-                    <p>Tell us more about yourself!</p>
-                    <p><input id="info-first-name" class="w3-input w3-border" type="text" placeholder="First Name"></p>
-                    <p><input id="info-last-name" class="w3-input w3-border" type="text" placeholder="Last Name"></p>
-                    <p><input id="info-occupation" class="w3-input w3-border" type="text" placeholder="Occupation"></p>
-                    <p><input id="info-address" class="w3-input w3-border" type="text" placeholder="Address"></p>
-                    <p><input id="info-phone" class="w3-input w3-border" type="text" placeholder="Telephone"></p>
-                    <p><input id="info-email" class="w3-input w3-border" type="text" placeholder="Enter e-mail"></p>
+                    <!--<p>Tell us more about yourself!</p>-->
+                    <label>First Name:</label>
+                    <p><input id="info-first-name" class="w3-input w3-border" type="text" placeholder="First Name" value="James"></p>
+                    <label>Last Name:</label>
+                    <p><input id="info-last-name" class="w3-input w3-border" type="text" placeholder="Last Name" value="Dean"></p>
+                    <label>Occupation:</label>
+                    <p><input id="info-occupation" class="w3-input w3-border" type="text" placeholder="Occupation" value="Student"></p>
+                    <label>Address:</label>
+                    <p><input id="info-address" class="w3-input w3-border" type="text" placeholder="Address" value="Evanston, United States"></p>
+                    <label>Telephone:</label>
+                    <p><input id="info-phone" class="w3-input w3-border" type="text" placeholder="Telephone" value="425-273-9801"></p>
+                    <label>Email:</label>
+                    <p><input id="info-email" class="w3-input w3-border" type="text" placeholder="Enter e-mail" value="JamesDean2019@gmail.com"></p>
                     <button type="button" class="w3-button w3-block w3-padding-large w3-black w3-margin-bottom" onclick="confirmInfo()">Confirm</button>
                 </div>
             </div>
@@ -148,23 +146,23 @@
                         </tr>
                         <tr class="table-row">
                             <td class="w3-xlarge w3-text-grey">WaistLine:</td>
-                            <td id="show-waist" class="w3-xlarge">80cm</td>
+                            <td id="show-waist" class="w3-xlarge">80 cm</td>
                         </tr>
                         <tr class="table-row">
                             <td class="w3-xlarge w3-text-grey">Bust:</td>
-                            <td id="show-bust" class="w3-xlarge">100cm</td>
+                            <td id="show-bust" class="w3-xlarge">100 cm</td>
                         </tr>
                         <tr class="table-row">
                             <td class="w3-xlarge w3-text-grey">Height:</td>
-                            <td id="show-height" class="w3-xlarge">175cm</td>
+                            <td id="show-height" class="w3-xlarge">175 cm</td>
                         </tr>
                         <tr class="table-row">
                             <td class="w3-xlarge w3-text-grey">Weight:</td>
-                            <td id="show-weight" class="w3-xlarge">70kg</td>
+                            <td id="show-weight" class="w3-xlarge">154 lb</td>
                         </tr>
                         <tr class="table-row">
                             <td class="w3-xlarge w3-text-grey">BMI:</td>
-                            <td id="show-BMI" class="w3-xlarge">22.86</td>
+                            <td id="show-BMI" class="w3-xlarge">22.82</td>
                         </tr>
                         <tr class="table-row">
                             <td> </td>
@@ -181,16 +179,16 @@
                     <label class="w3-large">Age</label>
                     <p ><input id="update-age" class="w3-input w3-padding-small w3-border" type="text" placeholder="18" value="22"></p>
 
-                    <label for="update-gender">Gender</label>
-                    <select id="update-gender" name="gender" class="w3-input w3-padding-16 w3-border">
+                    <label class="w3-large" for="update-gender">Gender</label>
+                    <select id="update-gender" name="gender" class="w3-input w3-padding-small w3-border">
                         <option>Male</option>
                         <option>Female</option>
                         <option>Deny to self identify</option>
                     </select>
                     <br>
 
-                    <label class="w3-large">Weight (kg)</label>
-                    <p><input id="update-weight" class="w3-input w3-padding-small w3-border" type="number" placeholder="kg" value="70"></p>
+                    <label class="w3-large">Weight (lb)</label>
+                    <p><input id="update-weight" class="w3-input w3-padding-small w3-border" type="number" placeholder="lb" value="154"></p>
 
                     <label class="w3-large">Height (cm)</label>
                     <p><input id="update-height" class="w3-input w3-padding-small w3-border" type="number" placeholder="cm" value="175"></p>
@@ -201,7 +199,7 @@
                     <label class="w3-large">Bust (cm)</label>
                     <p><input id="update-bust" class="w3-input w3-padding-small w3-border" type="number" placeholder="cm" value="100"></p>
 
-                    <p><button class="w3-button w3-black" onclick="saveProfile()">SAVE</button></p>
+                    <p><button class="w3-button w3-black" onclick="saveProfile()">Save</button></p>
             </div>
 
         </div>

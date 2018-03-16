@@ -14,14 +14,14 @@ function saveProfile(){
     var waist = document.getElementById("update-waist").value;
     var bust = document.getElementById("update-bust").value;
 
-    var bmi = weight/Math.pow(height/100,2)
+    var bmi = weight/(2.204*Math.pow(height/100,2))
 
     document.getElementById("show-age").innerHTML= age;
     document.getElementById("show-gender").innerHTML= gender;
-    document.getElementById("show-weight").innerHTML= weight + "kg";
-    document.getElementById("show-height").innerHTML= height + "cm";
-    document.getElementById("show-waist").innerHTML= waist + "cm";
-    document.getElementById("show-bust").innerHTML= bust + "cm";
+    document.getElementById("show-weight").innerHTML= weight + " lb";
+    document.getElementById("show-height").innerHTML= height + " cm";
+    document.getElementById("show-waist").innerHTML= waist + " cm";
+    document.getElementById("show-bust").innerHTML= bust + " cm";
 
     document.getElementById("show-BMI").innerHTML = bmi.toFixed(2);
 
