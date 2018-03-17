@@ -4,11 +4,13 @@ var groupOwner = "None";
 var group = ["outdoor running group", "swimming group"];
 var groupGoals = ["30 minutes running each day", "one hour daily swimming"];
 var searchGroupNum = 0;
+var groupNum = 1;
 
 function onNewGroup() {
     console.log("new a group");
     document.getElementById('popNewGroup').style.display = "block";
     document.getElementById("searchResult").style.display = "none";
+    groupNum = 1;
 }
 
 function onSubmit() {
@@ -25,6 +27,7 @@ function onSubmit() {
     document.getElementById('popNewGroup').style.display = "none";
     document.getElementById("notValidSreach").style.display = "none";
     document.getElementById("currentPlan").style.display = "none";
+    document.getElementById("leave_Group").style.display = "block";
 
 }
 
@@ -70,6 +73,8 @@ function onLeaveGroup() {
     document.getElementById("searchResult").style.display = "none";
     document.getElementById("notValidSreach").style.display = "none";
     document.getElementById("currentPlan").style.display = "none";
+    groupNum = 0;
+    document.getElementById("leave_Group").style.display = "none";
 }
 
 function onJoinGroup() {
