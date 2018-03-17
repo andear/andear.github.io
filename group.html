@@ -52,7 +52,7 @@
                         <label class="w3-large" style="left:-115px;display:inline-block;position:relative;">Search For a Group</label>
                         <p><input id="searchInput" class="w3-input w3-padding-small w3-border" style="width: 80%" type="text" placeholder="group name" required name="group name"></p>
                         <p><button class="w3-button w3-black" onclick="onSearch()">Search</button> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            <button class="w3-button w3-black" onclick="onNewGroup()">Creat a new group</button></p><br>
+                            <button class="w3-button w3-black" onclick="onNewGroup()">Create a new group</button></p><br>
                         <div class="noshow w3-text-grey" id="notValidSreach"></div>
                         <div class="noshow" id="searchResult">
                             <h5 class="">Search Result</h5>
@@ -101,12 +101,15 @@
 
 
 <div id="popNewGroup">
+    <!--<div class="form">-->
     <div class="form">
         <h2>New Group</h2>
         <hr>
         <input id="gn" name="groupName" placeholder="Group Name">&nbsp;
+        <br>
+        <br>
         <input id="gg" name="groupGoal" placeholder="Group Goal">&nbsp;
-        <p><button class=" w3-button w3-black" onclick="onSubmit()">new a group</button></p>
+        <p><button class=" w3-button w3-black" onclick="onSubmit()">Create a group</button></p>
     </div>
 </div>
 
